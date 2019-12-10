@@ -1,6 +1,8 @@
 package com.tts.restwithapi.model;
 
 import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,18 +10,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Products")
+@Table(name = "tbl_product")
 public class Product implements Serializable {
     
     private static final long serialVersionUID = 1L;
-
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
     private Long id;
-
+    @Column
     private String name;
+    @Column
     private int quantity;
+    @Column
     private double weight;
+    @Column
     private String type;
 
     public Product() {
@@ -76,7 +83,7 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return "City{" + "id=" + id + ", name=" + name + ", quantity=" + quantity +
+        return "City{id=" + id + ", name=" + name + ", quantity=" + quantity +
         		", weight=" + weight + ", type=" + type + '}';
     }
 }

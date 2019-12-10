@@ -1,10 +1,10 @@
-package com.tts.restwithapi.service;
+package com.tts.restwithapi.dao;
 
 import java.util.List;
 
 import com.tts.restwithapi.model.Product;
 
-public interface ProductService {
+public interface ProductDAO {
 	
 	List<Product> get();
 	
@@ -13,4 +13,5 @@ public interface ProductService {
 	void save(Product product);
 	
 	void delete(int id);
+
 }
