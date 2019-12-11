@@ -27,20 +27,22 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public Product get(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Session currentSession = entityManager.unwrap(Session.class);
+		Product productObj = currentSession.get(Product.class, id);
+		return productObj;
 	}
 
 	@Override
 	public void save(Product product) {
-		// TODO Auto-generated method stub
-		
+		Session currentSession = entityManager.unwrap(Session.class);
+		currentSession.saveOrUpdate(product);
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+		Session currentSession = entityManager.unwrap(Session.class);
+		Product productObj = currentSession.get(Product.class, id);
+		currentSession.delete(productObj);
 	}
 	
 }
